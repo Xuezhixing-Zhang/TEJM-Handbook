@@ -1,3 +1,3 @@
 # TEJM-Handbook
 
-See Introduction.html.
+Download Introduction to TEJM.html and read it.
