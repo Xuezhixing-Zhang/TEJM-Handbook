@@ -4,29 +4,29 @@
 
 #### 1.1 Background
 
-Climate change is leading to increased severity of extreme ambient temperatures which is associated with dramatic health harms.$^{1-3}$ Evidence shows that increasing temperatures are not experienced evenly instead communities of color experience higher summertime temperatures due to residential segregation$^{4-7}$ and may be warming faster.$^{8}$ Air conditioning is one of the only sources of personal adaptation to buffer extreme temperatures but communities of color are also likely to experience energy insecurity$^{9-11}$. Energy insecurity represents the inability to pay energy bills or rationing energy use for other household needs$^{10}$. The environmental injustice of temperature disparities and the energy injustice of energy insecurity calls for equitable solutions that protect minoritized populations. Energy efficiency upgrades represent a climate-equitable strategy to protect human health while reducing energy demand from cooling. However access to efficient technologies represents another area of injustice for marginalized communities$^{12–14}$. Equitable access to weatherization and energy efficiency for low-income communities of color is the mission of organizations like the Green and Healthy Homes Initiative (GHHI). Our goal is to use Earth observations to create the **Temperature and Energy Justice Mapping (TEJM)** tool to inform environmental and energy justice in New York. The tool scalable elsewhere will help stakeholders identify areas experiencing temperature disparities and energy insecurity. Consequently, these homes would benefit from energy efficiency upgrades, thus advancing equity and environmental justice.
+Climate change is leading to increased severity of extreme ambient temperatures which is associated with dramatic health harms.$^{1-3}$ Evidence shows that increasing temperatures are not experienced evenly instead communities of color experience higher summertime temperatures likely due to residential segregation$^{4-7}$ and may be warming faster.$^{8}$ Air conditioning is one of the only sources of personal adaptation to buffer extreme temperatures but communities of color are also likely to experience energy insecurity$^{9-11}$. Energy insecurity represents the inability to pay energy bills or rationing energy use for other household needs$^{10}$. The environmental injustice of temperature disparities and the energy injustice of energy insecurity calls for equitable solutions that protect minoritized populations. Energy efficiency upgrades represent a climate-equitable strategy to protect human health while reducing energy demand from cooling. However access to efficient technologies represents another area of injustice for marginalized communities$^{12–14}$. Equitable access to weatherization and energy efficiency for low-income communities of color is the mission of organizations like the Green and Healthy Homes Initiative (GHHI). Our goal is to use Earth observations to create the **Temperature and Energy Justice Mapping (TEJM)** tool to inform environmental and energy justice in New York. The tool scalable elsewhere aims to help stakeholders identify areas experiencing temperature disparities and energy insecurity. Consequently, these homes would benefit from energy efficiency upgrades, thus advancing equity and environmental justice.
 
 Compared to previous mapping tools, our product has the following advantages:
 
 - We present the population-weighted and race-specific temperature data that are derived from statistical methods, instead of visualizing observed data only. This allows us to identify the racial disparities in different counties.
-- Instead of visualizing energy data, we propose an energy insecure index for each Zip Code Tabulation Area (ZCTA), which enables us to better understand the energy consumption pattern for different geographical areas.
+- Instead of visualizing energy data, we propose an energy insecurity index for each Zip Code Tabulation Area (ZCTA), which enables us to better understand the energy consumption pattern for different geographical areas.
 - In addition to temperature and energy data, our map incorporates demographic information in terms of population size, median household income, and race-ethnicity, as well as the social vulnerability index (SVI), to help users quickly locate the county of their interest.
 
 #### 1.2 Concepts
 
-- **Heat Index**: **Heat Index** represents the impact of heat on the human body - **how hot we feel**. It takes into account factors like temperature and humidity. This is a good variable to look at when thinking about heat and human health.
+- **Heat Index**: **Heat Index** represents the impact of heat on the human body - **how hot we feel**. It takes into account both the temperature and relative humidity. This is a good variable to look at when thinking about heat and human health.
 
-- **Heat Index Cooling Degree Days (HICDD)**: **HICDD** is calculated as $HICDD = \sum_{i}^n \text{HeatIndex}_i - 65 \, ^\circ\mathrm{F}$, where $i$ represents the day of the season summated over all *n* days of the cooling season. In this case, we calculated **HICDD** for each warm season, which involves 153 days in total.
+- **Heat Index Cooling Degree Days (HICDD)**: **HICDD** is calculated as $HICDD = \sum_{i}^n \text{HeatIndex}_i - 65 \, ^\circ\mathrm{F}$, where $i$ represents the day of the season summed over all *n* days of the cooling season. In this case, we calculated **HICDD** for each warm season, which involves 153 days in total.
 
-- **Land Surface Temperature**: **Land Surface Temperature** focuses on the impact of heat on buildings. It takes one factor into account - the temperature of surfaces facing the sky. This is a good variable to look at when thinking about energy usage - how much energy will it take to cool a building that is a certain temperature?
+- **Land Surface Temperature**: **Land Surface Temperature** is the temperature of the surface as measured from satellites. We use this as a variable that is likely more relevant to building level energy use, e.g., how much energy will it take to cool a building that is a certain temperature?
 
 - **Land Surface Temperature Cooling Degree Days (LSTCDD)**: **LSTCDD** is calculated as $LSTCDD = \sum_{i}^n \text{LST}_i - 65 \, ^\circ\mathrm{F}$, where $i$ represents the day of the season summated over all *n* days of the cooling season. In this case, we calculated **LSTCDD** for each month of the warm season, which involves 30.6 days on average.
 
-- **Social Vulnerability Index (SVI)**: **SVI** refers to the potential negative effects on communities caused by external stresses on human health. Such stresses include natural or human-caused disasters, or disease outbreaks. Reducing social vulnerability can decrease both human suffering and economic loss. A larger **SVI** indicates more vulnerability. Overall SVI was derived from social factors in terms of Socioeconomic Status, Household Composition & Disability, Minority Status & Language and Housing type & Transportation. Household SVI was derived solely based on Household Composition & Disability. Further details can be accessed through this [link](https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/SVI_documentation_2018.html).
+- **Social Vulnerability Index (SVI)**: **SVI**, as developed by CDC, refers to the potential negative effects on communities caused by external stresses on human health. Such stresses include natural or human-caused disasters, or disease outbreaks. A larger **SVI** indicates more vulnerability. Overall SVI was derived from social factors in terms of Socioeconomic Status, Household Composition & Disability, Minority Status & Language and Housing type & Transportation. Household SVI was derived solely based on Household Composition & Disability. Further details can be accessed through this [link](https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/SVI_documentation_2018.html).
 
-- **Zip Code Tabulation Area (ZCTA)**: **ZCTA**s (pronounced *zik-tahs*) are a geographic product of the U.S. Census Bureau created to allow mapping, display, and geographic analyses of the United States Postal Service (USPS) Zone Improvement Plan (ZIP) Codes dataset. These areas are different from zip code areas. In this project, we provide a mapping between **ZCTA** and zip code areas.
+- **Zip Code Tabulation Area (ZCTA)**: **ZCTA**s (pronounced *zik-tahs*) are a geographic product of the U.S. Census Bureau created to allow mapping, display, and geographic analyses of the United States Postal Service (USPS) Zone Improvement Plan (ZIP) Codes dataset. These areas are different from zip code areas. In this project, we utilize ZCTAs since there is corresponding population data. We provide a list of zip codes that intersect with each ZCTA as reference. 
 
-- **Energy Insecure**: Energy insecurity occurs when financial concerns lead individuals to forego or limit the use of air conditioning due to worries about energy bill costs. In this project, we conducted a quantile regression analysis using HICDD to assess energy insecurity within a ZCTA area. Specifically, if the observed energy usage in a given month is lower than our prediction for the same month, we label the ZCTA area as energy insecure for that month.
+- **Energy Rationing**: Energy rationing occurs when financial concerns lead individuals to forego or limit the use of air conditioning due to worries about energy bill costs. In this project, we conducted a quantile regression analysis using HICDD to assess energy insecurity within a ZCTA area. We take evidence of rationing as a marker of summer time energy insecurity. Specifically, if the observed energy usage in a given month is lower than our prediction for the same month, we label the ZCTA area as energy insecure for that month.
 
   
 
@@ -96,12 +96,12 @@ Where $i$, $j$, $k$ denote ZCTA area, time (month and year) and county respectiv
 
 We construct our mapping tool with the [ArcGIS Online Dashboard](https://yalemaps.maps.arcgis.com/apps/dashboards/ade55c053abe478ca5a556326ff8042e). The dashboard involves the following components:
 
-- A main map for county-level information.
-- One panel for county-level demographic information.
-- Two top panels for county-level temperature information.
-- One top panel for ZCTA level energy insecurity map and demographic information.
-- One left sidebar for search and filters.
-- One right panel for county selection. 
+- **A**. A main map for county-level information.
+- **B**. One panel for county-level demographic information.
+- **C**. Two top panels for county-level temperature information.
+- **D**. One top panel for ZCTA level energy insecurity map and demographic information.
+- **E**. One left sidebar for search and filters.
+- **F**. One right panel for county selection. 
 
 ![Layout](C:\Users\27448\Desktop\Yale\Project\EHS\23.12.4\Layout.png)
 
